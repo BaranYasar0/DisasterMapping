@@ -12,5 +12,6 @@ namespace DisasterMapping.Shared.Enums
     Fire=1,
     Flood=2,
     Hurricane=3,
+    a=4,
     }
 }
