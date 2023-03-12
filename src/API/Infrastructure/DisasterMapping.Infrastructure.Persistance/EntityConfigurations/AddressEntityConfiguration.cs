@@ -15,13 +15,13 @@ namespace DisasterMapping.Infrastructure.Persistance.EntityConfigurations
     {
         public override void Configure(EntityTypeBuilder<Address> builder)
         {
-            builder.Property(x => x.DisasterId)
-                .HasColumnName("Disaster_Id");
+            //builder.Property(x => x.DisasterId)
+            //    .HasColumnName("Disaster_Id");
 
-            builder.HasOne(x => x.Disaster)
-                .WithOne(x => x.Address)
-                .HasForeignKey<Address>(x => x.DisasterId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(x => x.Disaster)
+            //    .WithOne(x => x.Address)
+            //    .HasForeignKey<Address>(x => x.DisasterId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             
             builder.HasOne(x => x.City);

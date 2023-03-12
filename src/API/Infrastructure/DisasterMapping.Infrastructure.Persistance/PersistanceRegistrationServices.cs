@@ -1,4 +1,6 @@
-﻿using DisasterMapping.Infrastructure.Persistance.Contexts;
+﻿using DisasterMapping.Api.Application.Services.Repositories;
+using DisasterMapping.Infrastructure.Persistance.Contexts;
+using DisasterMapping.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,8 @@ namespace DisasterMapping.Infrastructure.Persistance
     public static IServiceCollection AddPersistanceServices(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddDbContext<BaseDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DisasterConnectionString")));
+
+            services.AddScoped<IDisasterRepository, DisasterRepository>();
 
             return services;
         }

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\DisasterMapping.Api.Application\DisasterMapping.Api.Application.csproj" />
     <ProjectReference Include="..\..\Core\DisasterMapping.Api.Domain\DisasterMapping.Api.Domain.csproj" />
   </ItemGroup>
 

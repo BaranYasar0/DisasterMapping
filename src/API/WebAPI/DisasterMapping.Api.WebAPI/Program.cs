@@ -1,11 +1,16 @@
+using DisasterMapping.Api.Application.Extensions;
 using DisasterMapping.Infrastructure.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+    opt.ModelValidatorProviders.Clear();
+});
 builder.Services.AddPersistanceServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
