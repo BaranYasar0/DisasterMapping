@@ -91,7 +91,7 @@ namespace DisasterMapping.Infrastructure.Persistance.Repositories
                 query = query.Where(predicate);
 
             if (orderBy != null)
-                orderBy(query);
+               query= orderBy(query);
 
             return await query.ToListAsync();
         }

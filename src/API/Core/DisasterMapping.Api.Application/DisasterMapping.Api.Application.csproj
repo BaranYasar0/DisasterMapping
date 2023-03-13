@@ -14,6 +14,7 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Queries\" />
+    <Folder Include="Features\Commands\Disasters\Delete\" />
+    <Folder Include="Features\Commands\Disasters\Update\" />
   </ItemGroup>
 
 </Project>
