@@ -1,4 +1,5 @@
 ﻿using DisasterMapping.Api.Application.Exceptions;
+using DisasterMapping.Api.Application.Features.Rules.Common;
 using DisasterMapping.Api.Application.Services.Repositories;
 using DisasterMapping.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DisasterMapping.Api.Application.Features.Rules.Disasters
 {
-    public class DisasterBusinessRules
+    public class DisasterBusinessRules:BaseBusinessRules<Disaster>
     {
         private readonly IDisasterRepository _disasterRepository;
 

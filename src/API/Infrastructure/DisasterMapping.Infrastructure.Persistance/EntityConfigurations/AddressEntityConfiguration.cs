@@ -28,6 +28,8 @@ namespace DisasterMapping.Infrastructure.Persistance.EntityConfigurations
 
             builder.HasMany(x => x.Vehicles);
 
+
+
         }
     }
 }

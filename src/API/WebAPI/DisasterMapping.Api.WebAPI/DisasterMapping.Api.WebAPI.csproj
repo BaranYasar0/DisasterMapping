@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Infrastructure\DisasterMapping.Infrastructure.Persistance\DisasterMapping.Infrastructure.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
 </Project>

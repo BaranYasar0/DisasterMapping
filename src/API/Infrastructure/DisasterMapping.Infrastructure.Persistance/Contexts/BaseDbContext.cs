@@ -1,4 +1,6 @@
-﻿using DisasterMapping.Api.Domain.Entities.Common;
+﻿using DisasterMapping.Api.Domain.Entities;
+using DisasterMapping.Api.Domain.Entities.Common;
+using DisasterMapping.Infrastructure.Persistance.DataSeeding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,9 @@ namespace DisasterMapping.Infrastructure.Persistance.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.Entity<City>().HasData(BaseContextDataSeeding.GetCities());
+
             base.OnModelCreating(modelBuilder);
         }
 

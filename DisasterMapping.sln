@@ -21,17 +21,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{6DFF57CB-F185-4CBC-AFB4-2A44CA42FE40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Api.Application", "src\API\Core\DisasterMapping.Api.Application\DisasterMapping.Api.Application.csproj", "{96B471D8-B4A1-4097-A0FD-7E4DB5709DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Api.Application", "src\API\Core\DisasterMapping.Api.Application\DisasterMapping.Api.Application.csproj", "{96B471D8-B4A1-4097-A0FD-7E4DB5709DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Api.Domain", "src\API\Core\DisasterMapping.Api.Domain\DisasterMapping.Api.Domain.csproj", "{8F607AD2-90C2-41C9-9853-E09624E71954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Api.Domain", "src\API\Core\DisasterMapping.Api.Domain\DisasterMapping.Api.Domain.csproj", "{8F607AD2-90C2-41C9-9853-E09624E71954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Infrastructure.Infrastructure", "src\API\Infrastructure\DisasterMapping.Infrastructure.Infrastructure\DisasterMapping.Infrastructure.Infrastructure.csproj", "{AE20677C-52EA-4698-8C2D-1DC11C2DFA00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Infrastructure.Infrastructure", "src\API\Infrastructure\DisasterMapping.Infrastructure.Infrastructure\DisasterMapping.Infrastructure.Infrastructure.csproj", "{AE20677C-52EA-4698-8C2D-1DC11C2DFA00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Infrastructure.Persistance", "src\API\Infrastructure\DisasterMapping.Infrastructure.Persistance\DisasterMapping.Infrastructure.Persistance.csproj", "{ECACF81F-1D64-4047-8C81-4144612BD4BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Infrastructure.Persistance", "src\API\Infrastructure\DisasterMapping.Infrastructure.Persistance\DisasterMapping.Infrastructure.Persistance.csproj", "{ECACF81F-1D64-4047-8C81-4144612BD4BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Api.WebAPI", "src\API\WebAPI\DisasterMapping.Api.WebAPI\DisasterMapping.Api.WebAPI.csproj", "{70DC3A61-8A6C-46A8-8595-2181DD922E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Api.WebAPI", "src\API\WebAPI\DisasterMapping.Api.WebAPI\DisasterMapping.Api.WebAPI.csproj", "{70DC3A61-8A6C-46A8-8595-2181DD922E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Shared", "src\Shared\DisasterMapping.Shared\DisasterMapping.Shared.csproj", "{469F247E-053B-4898-A320-562B40791159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisasterMapping.Shared", "src\Shared\DisasterMapping.Shared\DisasterMapping.Shared.csproj", "{469F247E-053B-4898-A320-562B40791159}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisasterMapping.Client.MVC", "src\Client\DisasterMapping.Client.MVC\DisasterMapping.Client.MVC.csproj", "{687F9B38-61CE-4F90-898E-53A75D1031ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{469F247E-053B-4898-A320-562B40791159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{469F247E-053B-4898-A320-562B40791159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{469F247E-053B-4898-A320-562B40791159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687F9B38-61CE-4F90-898E-53A75D1031ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687F9B38-61CE-4F90-898E-53A75D1031ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687F9B38-61CE-4F90-898E-53A75D1031ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687F9B38-61CE-4F90-898E-53A75D1031ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{ECACF81F-1D64-4047-8C81-4144612BD4BF} = {FC386D3C-2898-4AE9-8249-A385DFE8A0B2}
 		{70DC3A61-8A6C-46A8-8595-2181DD922E64} = {6DFF57CB-F185-4CBC-AFB4-2A44CA42FE40}
 		{469F247E-053B-4898-A320-562B40791159} = {543622E2-1112-4FF3-A617-C6C1225F4427}
+		{687F9B38-61CE-4F90-898E-53A75D1031ED} = {A73ECA3A-6F5F-44B5-BB38-1E38A0CC3A3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72EC23AD-1C01-4A04-B2FC-2CABFF7D5034}

@@ -34,5 +34,8 @@ namespace DisasterMapping.Api.WebAPI.Controllers
             GetDisasterByIdDto result = await MediatR.Send(disasterQuery);
             return Ok(result);
         }
+
+
+
     }
 }

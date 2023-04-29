@@ -41,7 +41,9 @@ namespace DisasterMapping.Api.Application.Features.Commands.Disasters.Create
             public async Task<CreateDisasterDto> Handle(CreateDisasterCommand request, CancellationToken cancellationToken)
             {
                 Disaster disaster = _mapper.Map<Disaster>(request);
+                
                 await _disasterBusinessRules.DisasterAddressExistsOrNot(disaster);
+                await _disasterBusinessRules.NullCheck(disaster);
                 
                 Disaster addedDisaster = await _disasterRepository.AddAsync(disaster);
                 CreateDisasterDto createdDisaster = _mapper.Map<CreateDisasterDto>(addedDisaster);

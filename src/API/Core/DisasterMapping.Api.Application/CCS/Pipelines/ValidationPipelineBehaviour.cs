@@ -21,13 +21,17 @@ namespace DisasterMapping.Api.Application.CCS.Pipelines
         public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             ValidationContext<object> context = new(request);
-            List<ValidationFailure> failures = _validators.Select(vld => vld.Validate(context))
+            if(context is not null)
+            {
+                List<ValidationFailure> failures = _validators.Select(vld => vld.Validate(context))
                     .SelectMany(y => y.Errors)
                     .Where(z => z != null)
                     .ToList();
-            if (failures.Count != 0)
-                throw new ValidationException(failures);
-
+                
+                if (failures.Count != 0)
+                    throw new ValidationException(failures);
+            }
+            
             return next();
         }
     }

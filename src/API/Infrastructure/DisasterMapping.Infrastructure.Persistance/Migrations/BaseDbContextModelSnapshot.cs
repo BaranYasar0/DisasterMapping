@@ -68,7 +68,6 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("District")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -81,6 +80,56 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("City");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Adana"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Adıyaman"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Afyonkarahisar"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ankara"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bolu"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Çanakkale"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İzmir"
+                        });
                 });
 
             modelBuilder.Entity("DisasterMapping.Api.Domain.Entities.Disaster", b =>
@@ -91,7 +140,7 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AddressId")
+                    b.Property<int?>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<int?>("CityId")
@@ -107,7 +156,6 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -120,7 +168,8 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[AddressId] IS NOT NULL");
 
                     b.HasIndex("CityId");
 
@@ -350,8 +399,7 @@ namespace DisasterMapping.Infrastructure.Persistance.Migrations
                     b.HasOne("DisasterMapping.Api.Domain.Entities.Address", "Address")
                         .WithOne("Disaster")
                         .HasForeignKey("DisasterMapping.Api.Domain.Entities.Disaster", "AddressId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("DisasterMapping.Api.Domain.Entities.City", "City")
                         .WithMany("Disasters")
